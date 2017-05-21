@@ -28,7 +28,7 @@ class ViewServiceProvider implements ServiceProviderInterface
     {
         $config = config()->get('viewer', []);
         $loader = new Twig_Loader_Filesystem(isset($config['path']) ? $config['path'] : app()->getPath().'/src/Views');
-        $twig = new Twig_Environment($loader, $config['options']);
+        $twig = new Twig_Environment($loader, isset($config['options']) ? $config['options'] : []);
 
         $container->add('view', $twig);
     }
