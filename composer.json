@@ -1,0 +1,21 @@
+{
+    "name": "fastd/viewer",
+    "authors": [
+        {
+            "name": "JanHuang",
+            "email": "bboyjanhuang@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6",
+        "twig/twig": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "ServiceProvider\\": "src"
+        },
+        "files": [
+            "helpers.php"
+        ]
+    }
+}
