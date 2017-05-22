@@ -7,7 +7,7 @@
  * @see      http://www.fast-d.cn/
  */
 
-namespace ServiceProvider;
+namespace FastD\Viewer;
 
 
 use FastD\Container\Container;
@@ -19,7 +19,7 @@ use Twig_Loader_Filesystem;
  * Class ViewServiceProvider
  * @package ServiceProvider
  */
-class ViewServiceProvider implements ServiceProviderInterface
+class Viewer implements ServiceProviderInterface
 {
     /**
      * @param Container $container

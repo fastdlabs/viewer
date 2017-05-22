@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "ServiceProvider\\": "src"
+            "FastD\\Viewer\\": "src"
         },
         "files": [
             "helpers.php"
