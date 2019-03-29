@@ -7,6 +7,8 @@
  * @see      http://www.fast-d.cn/
  */
 
+use FastD\Http\Response;
+
 /**
  * @return Twig_Environment
  */
@@ -16,9 +18,12 @@ function view () {
 
 /**
  * @param $template
- * @param $variables
- * @return \FastD\Http\Response
+ * @param array $variables
+ * @return Response
+ * @throws Twig_Error_Loader
+ * @throws Twig_Error_Runtime
+ * @throws Twig_Error_Syntax
  */
 function render ($template, array $variables = []) {
-    return new \FastD\Http\Response(view()->render($template, $variables));
+    return new Response(view()->render($template, $variables));
 }
