@@ -12,8 +12,8 @@ namespace FastD\Viewer;
 
 use FastD\Container\Container;
 use FastD\Container\ServiceProviderInterface;
-use Twig_Environment;
-use Twig_Loader_Filesystem;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 /**
  * Class ViewServiceProvider
@@ -27,8 +27,8 @@ class Viewer implements ServiceProviderInterface
     public function register(Container $container)
     {
         $config = config()->get('viewer', []);
-        $loader = new Twig_Loader_Filesystem(isset($config['path']) ? $config['path'] : app()->getPath().'/src/Views');
-        $twig = new Twig_Environment($loader, isset($config['options']) ? $config['options'] : []);
+        $loader = new FilesystemLoader(isset($config['path']) ? $config['path'] : app()->getPath().'/src/Views');
+        $twig = new Environment($loader, isset($config['options']) ? $config['options'] : []);
 
         $container->add('view', $twig);
     }
